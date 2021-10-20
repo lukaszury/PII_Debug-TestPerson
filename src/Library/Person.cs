@@ -4,15 +4,18 @@ namespace UnitTestAndDebug
 {
     public class Person
     {
-        public Person(string name, string id)
+        public Person(string name, string id, string birthday)
         {
             this.Name = name;
             this.ID = id;
+            this.Birthday = birthday;
         }
 
         private string name;
 
         private string id;
+
+        private string birthday;
 
         public string Name
         {
@@ -41,6 +44,26 @@ namespace UnitTestAndDebug
                 if (IdUtils.IdIsValid(value))
                 {
                     this.id = value;
+                }
+            }
+        }
+
+        public string Birthday
+        {
+            get
+            {
+                return this.birthday;
+            }
+
+            set
+            {
+                if(bdayUtils.bdayIsValid(value))
+                {
+                    this.birthday=value;
+                }
+                else
+                {
+                    this.birthday="1/1/1900";
                 }
             }
         }
